@@ -1,1 +1,854 @@
-:root{font-family:Arial,Helvetica,sans-serif;color:#172d46;background:#f5f7fa;font-synthesis:none;color-scheme:light}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer;border:0;color:inherit;background:none}button:disabled{cursor:not-allowed}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #769ac0;outline-offset:3px}svg{flex-shrink:0}.app{max-width:600px;min-height:100dvh;margin:auto;background:#fff}header{display:flex;flex-direction:column;align-items:center;padding:22px 20px 20px;border-bottom:1px solid #edf0f4}header a{display:block;line-height:0}header img{width:155px;height:auto;display:block}.game-label{margin-top:12px;color:#6a7685;font-size:12px;letter-spacing:.4px}main{padding:20px 24px 24px}nav{display:grid;grid-template-columns:1fr 1fr;background:#f0f3f6;padding:4px;border-radius:13px;gap:4px}nav button{min-height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;color:#6e7b8b}nav button.active{color:#172d46;background:#fff;box-shadow:0 2px 5px #172d4610}.intro{margin:28px 0 25px}h1{font-size:24px;line-height:1.25;letter-spacing:-.7px;margin:0 0 8px}p{line-height:1.6}.intro p{margin:0;color:#7c8794;font-size:14px}h2{font-size:17px;margin:0;letter-spacing:-.3px}.field-label,label{font-size:13px;font-weight:600;display:block;color:#435369}.branches{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:9px}.branches button{height:48px;border:1px solid #dfe5ec;border-radius:10px;font-size:15px;font-weight:600;display:flex;justify-content:center;align-items:center;gap:12px}.branches .selected{border-color:#172d46;background:#172d46;color:#fff}.filters{display:grid;grid-template-columns:1fr 1fr;gap:15px 12px;margin-top:20px}.filters .date{grid-column:1/-1}input,select{appearance:auto;min-width:0;width:100%;height:49px;border:1px solid #dfe5ec;background:#fff;color:#172d46;border-radius:10px;font-size:16px;padding:0 12px;margin-top:8px;outline:none}input[type=date]{display:block;min-height:49px;-webkit-appearance:none}input[type=date]::-webkit-date-and-time-value{text-align:left}.tables,.reservations{margin-top:29px}.section-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;gap:12px}.section-heading>span{font-size:12px;color:#798594}.table-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.station{position:relative;min-height:98px;background:#f8fafb;border:1px solid #dfe7e9;border-radius:12px;display:grid;grid-template-columns:40px 1fr;grid-template-rows:1fr 1fr;column-gap:8px;text-align:left;padding:20px 15px}.station-icon{grid-row:1/3;align-self:center;color:#71879a;display:flex;align-items:center;justify-content:center}.station strong{font-size:15px;align-self:end;margin-bottom:4px}.station small{font-size:12px;color:#38806b;align-self:start}.station small:before{content:'';display:inline-block;width:5px;height:5px;background:currentColor;border-radius:50%;margin-right:5px;vertical-align:middle}.station.picked{border:2px solid #172d46;padding:19px 14px;background:#edf2f8}.picked .station-icon,.picked small{color:#172d46}.station.occupied{background:#f4f4f4;border-color:#ebebeb;color:#a1a6ad}.occupied .station-icon{color:#b5bbc2}.occupied small{color:#a58a8a}.station:disabled:not(.occupied){opacity:.5}.station:hover:not(:disabled){border-color:#172d46}.hint{font-size:12px;color:#8a95a2;text-align:center;margin:15px 0 19px}.booking-bar{position:sticky;bottom:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:25px;background:#fff;padding:17px 0 max(17px,env(safe-area-inset-bottom));border-top:1px solid #e9edf1}.booking-bar small{display:block;font-size:12px;color:#7b8795;margin-bottom:5px}.booking-bar strong{font-size:23px;letter-spacing:-.5px}.primary{min-height:50px;display:flex;align-items:center;justify-content:center;gap:12px;background:#172d46;color:#fff;border-radius:11px;padding:13px 21px;font-size:15px;font-weight:600}.primary:disabled{background:#e7ecf1;color:#9aa6b2}.booking-bar .primary{flex:1;max-width:260px}.primary:hover:not(:disabled){background:#294767}footer{color:#929ba7;font-size:10px;text-align:center;line-height:1.6;padding-top:18px}.notice,.error{display:flex;align-items:center;gap:9px;font-size:13px;border-radius:10px;padding:13px;background:#edf7ef;color:#327047;margin-bottom:20px;line-height:1.5}.notice button{margin-left:auto;min-height:36px;min-width:36px;display:grid;place-items:center}.error{background:#fff0ed;color:#a14b3c;flex-wrap:wrap}.error a,.error button{font-weight:600;text-decoration:underline;min-height:30px}.search{position:relative;margin-bottom:25px}.search svg{position:absolute;left:14px;top:16px;color:#8c99a7}.search input{margin:0;padding-left:42px}.reservation{border:1px solid #e4e9ef;border-radius:12px;padding:17px;margin-bottom:11px}.reservation-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.reservation-top strong{font-size:15px;overflow-wrap:anywhere}.status{font-size:10px;white-space:nowrap;color:#38806b;background:#eef7f1;padding:5px 7px;border-radius:5px}.cancelled .status{color:#8c929b;background:#f2f3f5}.reservation p{font-size:13px;color:#768596;margin:11px 0}.reservation p span{margin:0 5px}.reservation-bottom{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px}.reservation-bottom a{color:#60778e}.reservation-bottom strong{margin-left:auto}.reservation-bottom button{min-height:44px;color:#a45c53;font-size:12px;padding:0 8px}.empty{text-align:center;padding:40px 10px;color:#8b99a8}.empty p{font-size:14px}dialog{color:#172d46;background:#fff;border:none;border-radius:20px;width:calc(100% - 32px);max-width:440px;padding:28px;max-height:calc(100dvh - 32px);overflow:auto;box-shadow:0 24px 80px #10233930}dialog::backdrop{background:#10203585;backdrop-filter:blur(3px)}dialog h2{font-size:21px;line-height:1.4;padding-right:25px}.close{position:absolute;right:10px;top:10px;width:44px;height:44px;display:grid;place-items:center;color:#7c8997}.summary{font-size:14px;color:#788697;line-height:1.8;margin:13px 0 23px}dialog label{margin-top:18px}dialog .primary{width:100%}.total{display:flex;justify-content:space-between;align-items:center;margin:26px 0;font-size:13px;color:#768494}.total strong{font-size:23px;color:#172d46}.dialog-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}.secondary{border:1px solid #dce3eb;border-radius:11px;min-height:50px;font-weight:600}@media(min-width:700px){.app{margin:30px auto;border:1px solid #e5eaf0;border-radius:22px;min-height:calc(100dvh - 60px);box-shadow:0 12px 50px #172d4606;overflow:clip}main{padding:24px 36px 30px}header{padding:25px}.filters{grid-template-columns:1.5fr 1fr 1fr}.filters .date{grid-column:auto}.table-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.station{min-height:95px}}@media(max-width:360px){main{padding:16px}.station{padding:17px 9px;column-gap:4px;grid-template-columns:32px 1fr}.station.picked{padding:16px 8px}.station strong{font-size:14px}h1{font-size:22px}nav button{font-size:12px;gap:5px}dialog{padding:23px}}
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #172d46;
+  background: #f4f6f9;
+  font-synthesis: none;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f9;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button, a, input, select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  color: inherit;
+  background: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid #769ac0;
+  outline-offset: 2px;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+.app {
+  max-width: 1000px;
+  min-height: 100dvh;
+  margin: auto;
+  background: #fff;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px 18px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+header a {
+  display: block;
+  line-height: 0;
+}
+
+header img {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+.game-label {
+  margin-top: 10px;
+  color: #5c6b7d;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+main {
+  padding: 20px 24px 28px;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #edf2f7;
+  padding: 4px;
+  border-radius: 12px;
+  gap: 4px;
+  max-width: 480px;
+}
+
+nav button {
+  min-height: 46px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  transition: all 0.15s ease;
+}
+
+nav button.active {
+  color: #172d46;
+  background: #fff;
+  box-shadow: 0 2px 6px #172d4615;
+}
+
+.intro {
+  margin: 24px 0 20px;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.6px;
+  margin: 0 0 6px;
+  color: #112233;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.intro p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.field-label, label {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  color: #334155;
+}
+
+.branches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+  max-width: 480px;
+}
+
+.branches button {
+  height: 48px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.15s ease;
+}
+
+.branches .selected {
+  border-color: #172d46;
+  background: #172d46;
+  color: #fff;
+  box-shadow: 0 3px 8px #172d4625;
+}
+
+/* Tarih Seçici Bölümü */
+.day-picker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  max-width: 480px;
+}
+
+.day-picker > button {
+  width: 46px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 10px;
+  flex-shrink: 0;
+  color: #334155;
+  transition: background 0.15s ease;
+}
+
+.day-picker > button:hover {
+  background: #edf2f7;
+}
+
+.day-picker label {
+  flex: 1;
+  min-width: 0;
+}
+
+.date-readable {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #172d46;
+  margin-bottom: 5px;
+  letter-spacing: -0.2px;
+}
+
+input, select {
+  appearance: auto;
+  min-width: 0;
+  width: 100%;
+  height: 46px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #172d46;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 0 12px;
+  outline: none;
+}
+
+/* 7/24 Zaman Çizelgesi */
+.schedule {
+  margin-top: 26px;
+}
+
+.schedule-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.legend {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend i {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #f8fafc;
+}
+
+.legend .booked {
+  background: #172d46;
+  border-color: #172d46;
+}
+
+.price-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2b6cb0;
+  background: #ebf8ff;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.timeline {
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f5f9;
+  background: #fff;
+  box-shadow: 0 4px 16px #172d4608;
+}
+
+.timeline-inner {
+  width: 1616px;
+  position: relative;
+}
+
+.time-row, .schedule-row {
+  display: flex;
+  position: relative;
+}
+
+.time-row {
+  height: 42px;
+  background: #f1f5f9;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.table-label {
+  width: 80px;
+  flex-shrink: 0;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: #fff;
+  border-right: 1px solid #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-shadow: 4px 0 10px #172d4610;
+}
+
+.table-label strong {
+  font-size: 13px;
+  color: #0f172a;
+}
+
+.table-label svg {
+  color: #64748b;
+}
+
+.table-label.corner {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hour-labels {
+  display: flex;
+  position: relative;
+  width: 1536px;
+  flex-shrink: 0;
+}
+
+.hour-labels > span {
+  width: 64px;
+  flex-shrink: 0;
+  padding: 13px 0 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.hour-labels > .midnight {
+  position: absolute;
+  left: 1500px;
+  top: 0;
+  width: 48px;
+  background: #f1f5f9;
+}
+
+.schedule-row {
+  height: 72px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.day-track {
+  position: relative;
+  display: flex;
+  width: 1536px;
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.time-slot {
+  width: 64px;
+  flex-shrink: 0;
+  border-right: 1px solid #f1f5f9;
+  background: #ffffff;
+  padding: 0;
+  transition: background 0.1s ease;
+}
+
+.time-slot span {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  color: #94a3b8;
+  margin: auto;
+  font-size: 18px;
+  font-weight: 400;
+  transition: all 0.15s ease;
+}
+
+.time-slot:hover:not(:disabled) {
+  background: #e2e8f0;
+}
+
+.time-slot:hover:not(:disabled) span {
+  color: #0f172a;
+  background: #cbd5e1;
+}
+
+.past-slot {
+  background: #f8fafc;
+}
+
+/* Dolu Rezervasyon Bloğu */
+.reservation-block {
+  position: absolute;
+  top: 6px;
+  height: 60px;
+  z-index: 3;
+  background: linear-gradient(135deg, #172d46 0%, #1e3a5f 100%);
+  border: 1px solid #2d4f7c;
+  border-radius: 10px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6px 10px;
+  overflow: hidden;
+  text-align: left;
+  gap: 3px;
+  box-shadow: 0 4px 10px #172d4625;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.reservation-block strong {
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.reservation-block small {
+  font-size: 10px;
+  white-space: nowrap;
+  color: #93c5fd;
+  font-weight: 500;
+}
+
+.reservation-block:hover {
+  background: linear-gradient(135deg, #1f3b5c 0%, #294e7c 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px #172d4635;
+}
+
+.schedule-help {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #64748b;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.schedule-help button {
+  min-height: 38px;
+  color: #1e3a8a;
+  background: #eff6ff;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 12px;
+  transition: background 0.15s ease;
+}
+
+.schedule-help button:hover {
+  background: #dbeafe;
+}
+
+.hint {
+  font-size: 12px;
+  color: #64748b;
+  text-align: center;
+  margin: 16px 0 10px;
+}
+
+/* Rezervasyonlar Listesi */
+.reservations {
+  margin-top: 24px;
+}
+
+.search {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search svg {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  color: #94a3b8;
+}
+
+.search input {
+  margin: 0;
+  padding-left: 42px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.section-heading > span {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.reservation {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: #fff;
+  box-shadow: 0 2px 6px #172d4605;
+}
+
+.reservation-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.reservation-top strong {
+  font-size: 15px;
+  color: #0f172a;
+}
+
+.status {
+  font-size: 11px;
+  font-weight: 600;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.cancelled .status {
+  color: #64748b;
+  background: #f1f5f9;
+}
+
+.reservation p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 8px 0;
+}
+
+.reservation-bottom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.reservation-bottom a {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.reservation-bottom strong {
+  margin-left: auto;
+  font-size: 15px;
+  color: #0f172a;
+}
+
+.reservation-bottom button {
+  min-height: 38px;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 10px;
+  border-radius: 6px;
+  background: #fef2f2;
+}
+
+.reservation-bottom button:hover {
+  background: #fee2e2;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px 10px;
+  color: #64748b;
+}
+
+.empty p {
+  font-size: 14px;
+}
+
+/* Modallar */
+dialog {
+  color: #0f172a;
+  background: #fff;
+  border: none;
+  border-radius: 20px;
+  width: calc(100% - 32px);
+  max-width: 440px;
+  padding: 28px;
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  box-shadow: 0 24px 80px #10233930;
+}
+
+dialog::backdrop {
+  background: #0f172a80;
+  backdrop-filter: blur(4px);
+}
+
+dialog h2 {
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.4;
+  padding-right: 25px;
+  color: #0f172a;
+}
+
+.close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: #64748b;
+  border-radius: 8px;
+}
+
+.close:hover {
+  background: #f1f5f9;
+}
+
+.summary {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.7;
+  margin: 12px 0 20px;
+  background: #f8fafc;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+dialog label {
+  margin-top: 16px;
+}
+
+dialog label input, dialog label select {
+  margin-top: 6px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 22px 0;
+  font-size: 14px;
+  color: #475569;
+}
+
+.total strong {
+  font-size: 24px;
+  color: #0f172a;
+}
+
+.primary {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #172d46;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  width: 100%;
+  transition: background 0.15s ease;
+}
+
+.primary:hover:not(:disabled) {
+  background: #1e3a5f;
+}
+
+.primary:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+}
+
+.secondary {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  min-height: 48px;
+  font-weight: 600;
+  color: #334155;
+  background: #fff;
+}
+
+.secondary:hover {
+  background: #f8fafc;
+}
+
+.dialog-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.detail-person {
+  padding: 14px 0;
+  border-block: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.detail-person strong {
+  font-size: 16px;
+}
+
+.detail-person a {
+  font-size: 14px;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.detail-cancel {
+  width: 100%;
+  color: #b91c1c;
+  border-color: #fecaca;
+  background: #fff5f5;
+  margin-top: 10px;
+}
+
+.detail-cancel:hover {
+  background: #fee2e2;
+}
+
+.notice, .error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  border-radius: 10px;
+  padding: 13px 16px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.notice {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.notice button {
+  margin-left: auto;
+  min-height: 32px;
+  min-width: 32px;
+  display: grid;
+  place-items: center;
+}
+
+.error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  flex-wrap: wrap;
+}
+
+.error a, .error button {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+footer {
+  color: #64748b;
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.6;
+  padding-top: 24px;
+  border-top: 1px solid #f1f5f9;
+  margin-top: 24px;
+}
+
+/* Responsive Düzenler */
+@media (min-width: 768px) {
+  .app {
+    margin: 28px auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    box-shadow: 0 16px 50px #172d4608;
+    overflow: clip;
+  }
+
+  main {
+    padding: 28px 36px 36px;
+  }
+
+  header {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 16px 14px 24px;
+  }
+
+  .table-label {
+    width: 72px;
+  }
+
+  .time-slot, .hour-labels > span {
+    width: 60px;
+  }
+
+  .timeline-inner {
+    width: 1520px;
+  }
+
+  .day-track, .hour-labels {
+    width: 1440px;
+  }
+}
