@@ -6,8 +6,10 @@ import { configureToolEnvironment } from "./scripts/tool-environment.mjs";
 import { sites } from "./scripts/vite/sites-vite-plugin";
 import { connectorPreview } from "./scripts/vite/connector-preview-plugin.mjs";
 
-const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
-  "00000000-0000-4000-8000-000000000000";
+const D1_DATABASE_ID =
+  process.env.D1_DATABASE_ID || "6f67cf36-db53-47f5-9743-e75eebf2c086";
+const D1_DATABASE_NAME =
+  process.env.D1_DATABASE_NAME || "didim-db";
 
 const { d1, r2 } = hostingConfig;
 
@@ -16,14 +18,16 @@ const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 const managedLinux = readExecutionProfile() === "managed-linux";
 
 const localBindingConfig = {
+  name: "didim-arena",
   main: "./worker/index.ts",
   compatibility_flags: ["nodejs_compat"],
+  workers_dev: true,
   d1_databases: d1
     ? [
         {
           binding: d1,
-          database_name: "site-creator-d1",
-          database_id: SITE_CREATOR_PLACEHOLDER_DATABASE_ID,
+          database_name: D1_DATABASE_NAME,
+          database_id: D1_DATABASE_ID,
         },
       ]
     : [],
