@@ -1,3 +1,36 @@
 import { sqliteTable, text, integer, uniqueIndex } from 'drizzle-orm/sqlite-core';
-export const bookings=sqliteTable('bookings',{id:text('id').primaryKey(),branch:integer('branch').notNull(),table:integer('table_no').notNull(),date:text('date').notNull(),hour:integer('hour').notNull(),duration:integer('duration').notNull(),name:text('name').notNull(),phone:text('phone').notNull(),total:integer('total').notNull(),status:text('status').notNull().default('confirmed'),created:text('created').notNull()});
-export const slots=sqliteTable('slots',{id:text('id').primaryKey(),booking:text('booking').notNull(),branch:integer('branch').notNull(),table:integer('table_no').notNull(),date:text('date').notNull(),hour:integer('hour').notNull()},t=>[uniqueIndex('slot_unique').on(t.branch,t.table,t.date,t.hour)]);
+
+export const bookings = sqliteTable('bookings', {
+  id: text('id').primaryKey(),
+  branch: integer('branch').notNull(),
+  table: integer('table_no').notNull(),
+  date: text('date').notNull(),
+  hour: integer('hour').notNull(),
+  duration: integer('duration').notNull(),
+  name: text('name').notNull(),
+  phone: text('phone').notNull(),
+  note: text('note').default('').notNull(),
+  total: integer('total').notNull(),
+  status: text('status').notNull().default('confirmed'),
+  created: text('created').notNull(),
+});
+
+export const slots = sqliteTable(
+  'slots',
+  {
+    id: text('id').primaryKey(),
+    booking: text('booking').notNull(),
+    branch: integer('branch').notNull(),
+    table: integer('table_no').notNull(),
+    date: text('date').notNull(),
+    hour: integer('hour').notNull(),
+  },
+  (t) => [uniqueIndex('slot_unique').on(t.branch, t.table, t.date, t.hour)]
+);
+
+export const notes = sqliteTable('notes', {
+  id: text('id').primaryKey(),
+  content: text('content').notNull(),
+  created: text('created').notNull(),
+  status: text('status').notNull().default('active'),
+});
