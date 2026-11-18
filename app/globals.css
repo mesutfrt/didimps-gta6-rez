@@ -15,11 +15,11 @@ body {
   background: #f4f6f9;
 }
 
-button, input, select {
+button, input, select, textarea {
   font: inherit;
 }
 
-button, a, input, select {
+button, a, input, select, textarea {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -39,7 +39,7 @@ a {
   text-decoration: none;
 }
 
-button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 3px solid #769ac0;
   outline-offset: 2px;
 }
@@ -53,6 +53,7 @@ svg {
   min-height: 100dvh;
   margin: auto;
   background: #fff;
+  position: relative;
 }
 
 header {
@@ -87,33 +88,45 @@ main {
   padding: 20px 24px 28px;
 }
 
-nav {
+/* 3 Sekmeli Navigasyon */
+.main-nav {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   background: #edf2f7;
   padding: 4px;
   border-radius: 12px;
   gap: 4px;
-  max-width: 480px;
+  max-width: 580px;
 }
 
-nav button {
+.main-nav button {
   min-height: 46px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-size: 14px;
+  gap: 6px;
+  font-size: 13px;
   font-weight: 600;
   color: #64748b;
   transition: all 0.15s ease;
+  position: relative;
 }
 
-nav button.active {
+.main-nav button.active {
   color: #172d46;
   background: #fff;
   box-shadow: 0 2px 6px #172d4615;
+}
+
+.badge-count {
+  background: #2563eb;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  margin-left: 2px;
 }
 
 .intro {
@@ -220,7 +233,7 @@ h2 {
   letter-spacing: -0.2px;
 }
 
-input, select {
+input, select, textarea {
   appearance: auto;
   min-width: 0;
   width: 100%;
@@ -232,6 +245,18 @@ input, select {
   font-size: 15px;
   padding: 0 12px;
   outline: none;
+}
+
+textarea {
+  height: auto;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 /* 7/24 Zaman Çizelgesi */
@@ -571,11 +596,22 @@ input, select {
   margin: 8px 0;
 }
 
+.reservation-note {
+  font-size: 12px;
+  color: #1e3a8a;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
 .reservation-bottom {
   display: flex;
   align-items: center;
   gap: 12px;
   font-size: 13px;
+  flex-wrap: wrap;
 }
 
 .reservation-bottom a {
@@ -584,33 +620,146 @@ input, select {
 }
 
 .reservation-bottom strong {
-  margin-left: auto;
   font-size: 15px;
   color: #0f172a;
 }
 
-.reservation-bottom button {
-  min-height: 38px;
-  color: #b91c1c;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 0 10px;
-  border-radius: 6px;
-  background: #fef2f2;
+.booking-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
 }
 
-.reservation-bottom button:hover {
+.edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.edit-btn:hover {
+  background: #dbeafe;
+}
+
+.cancel-btn {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.cancel-btn:hover {
   background: #fee2e2;
 }
 
-.empty {
-  text-align: center;
-  padding: 40px 10px;
+/* Notlar Sekmesi */
+.notes-section {
+  margin-top: 20px;
+}
+
+.note-form {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.note-form textarea {
+  margin: 8px 0 12px;
+  border: 1px solid #cbd5e1;
+}
+
+.note-submit {
+  width: auto;
+  min-height: 40px;
+  padding: 8px 18px;
+  font-size: 14px;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.note-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #2563eb;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 6px #172d4605;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.note-time {
+  font-size: 11px;
+  font-weight: 600;
   color: #64748b;
 }
 
-.empty p {
+.note-delete {
+  color: #94a3b8;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.note-delete:hover {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.note-content {
+  margin: 0;
   font-size: 14px;
+  color: #1e293b;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* YÜZEN (+) BUTON (Floating Action Button) */
+.fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #172d46 0%, #1e3a5f 100%);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 20px #172d4640;
+  z-index: 99;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+.fab:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 10px 25px #172d4650;
+  background: linear-gradient(135deg, #1f3b5c 0%, #2b5284 100%);
+}
+
+.fab:active {
+  transform: scale(0.96);
 }
 
 /* Modallar */
@@ -620,7 +769,7 @@ dialog {
   border: none;
   border-radius: 20px;
   width: calc(100% - 32px);
-  max-width: 440px;
+  max-width: 460px;
   padding: 28px;
   max-height: calc(100dvh - 32px);
   overflow: auto;
@@ -668,10 +817,10 @@ dialog h2 {
 }
 
 dialog label {
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
-dialog label input, dialog label select {
+dialog label input, dialog label select, dialog label textarea {
   margin-top: 6px;
 }
 
@@ -679,7 +828,7 @@ dialog label input, dialog label select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 22px 0;
+  margin: 20px 0;
   font-size: 14px;
   color: #475569;
 }
@@ -721,6 +870,9 @@ dialog label input, dialog label select {
   font-weight: 600;
   color: #334155;
   background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .secondary:hover {
@@ -731,7 +883,7 @@ dialog label input, dialog label select {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .detail-person {
@@ -753,12 +905,24 @@ dialog label input, dialog label select {
   font-weight: 600;
 }
 
+.detail-note-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 10px;
+}
+
+.detail-note-box p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #1e40af;
+}
+
 .detail-cancel {
-  width: 100%;
   color: #b91c1c;
   border-color: #fecaca;
   background: #fff5f5;
-  margin-top: 10px;
 }
 
 .detail-cancel:hover {
@@ -836,6 +1000,11 @@ footer {
     padding: 16px 14px 24px;
   }
 
+  .main-nav button {
+    font-size: 12px;
+    padding: 0 4px;
+  }
+
   .table-label {
     width: 72px;
   }
@@ -850,5 +1019,12 @@ footer {
 
   .day-track, .hour-labels {
     width: 1440px;
+  }
+
+  .fab {
+    right: 18px;
+    bottom: 18px;
+    width: 52px;
+    height: 52px;
   }
 }
