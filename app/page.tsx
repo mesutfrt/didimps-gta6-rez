@@ -30,7 +30,6 @@ export default function Home() {
   const [notice, setNotice] = useState('');
   const [busy, setBusy] = useState(false);
   const [query, setQuery] = useState('');
-  const [unauth, setUnauth] = useState(false);
   const [cancel, setCancel] = useState<string | null>(null);
   const [detail, setDetail] = useState<Booking | null>(null);
 
@@ -50,7 +49,6 @@ export default function Home() {
       const r = await fetch(`/api/reservations?date=${date}`);
       const data: any = await r.json();
       if (seq !== request.current) return;
-      setUnauth(r.status === 401);
       if (!r.ok) throw Error(data.error);
       setRows(data);
       setError('');
@@ -215,13 +213,7 @@ export default function Home() {
         {error && (
           <div className="error" role="alert">
             {error}
-            {unauth ? (
-              <a href="/signin-with-chatgpt?return_to=/" target="_top">
-                Giriş yap →
-              </a>
-            ) : (
-              <button onClick={refresh}>Yeniden dene</button>
-            )}
+            <button onClick={refresh}>Yeniden dene</button>
           </div>
         )}
 
